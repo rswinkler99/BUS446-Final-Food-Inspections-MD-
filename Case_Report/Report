@@ -1,1 +1,53 @@
+https://docs.google.com/document/d/1z-K_lBX9_JAHAGAtZ0FJboLEL-aHqYxN5qHSbWRdpEc/edit?tab=t.0 
+
+
+Food Safety Inspection Risk Analysis: Montgomery County
+By: Maxwell Blanc, Jace Miller, Ryan Winkler, Mikey Vang
+BUS-446
+November 20, 2026
+
+Dataset: Montgomery County Food Service Inspection Records 
+Link
+
+
+
+
+
+
+Executive Summary:
+Local health departments have limited inspectors and monitor thousands of food establishments. Inspecting low-risk venues, such as snack bars that sell pre-packaged snacks, which takes up calendar time and can allow critical hazards to go undetected. Resource allocation is the main problem for Montgomery County, Maryland, and this report analyzes 11,854 food service inspections across 4,160 unique establishments to address it. Over the two years, 31% of inspections resulted in an adverse outcome, defined as critical violations. 69% of the visits passed with no critical violations.
+The analysis reveals that health code failures happen in two specific areas. These areas are cold-holding temperatures and pest infestation. Cold storage failures spike in the summer, and humidity strains kitchen refrigerators. A multivariable logistic regression showed that past inspection performance predicts future failures. Establishments that failed prior inspections are more than twice as likely to fail again, and full-service restaurants face substantially higher failure rates than basic grocery stores. Our model reaches 70% overall accuracy; using the standard deviation .50 cutoff threshold misses over 80% of actual violators. Unsafe conditions endanger customers; the health department should lower its inspection trigger threshold to .30 to catch high-risk and repeat offenders earlier.
+Data and Methodology:
+For our study, we used food service inspection records published by the Montgomery County Department of Health and Human Services, covering 11,854 inspections across 31 attributes. To prepare the data for visual and predictive analysis, we converted outcomes into binary target variables, where 1 represents an adverse outcome, and 0 represents a clean pass. We then sorted orders by establishment ID and Inspection date in Excel to create a historical compliance indicator tracking whether establishments failed prior visits. We also created indicator variables for full-service restaurants, reinspection, and complaints. We used Tableau across two workbooks to visualize adverse rates across 18 facility categories, inspection types, 16 pivoted health code check items, and meteorological seasons. For our logistic regression, we used a Microsoft Excel add-in called XLMinner to estimate the odds of failure associated with each operational factor, and we used a 2x2 matrix evaluation to assess classification accuracy.
+Facility Risk and Inspection Dynamics
+	Analysis of inspection outcomes across establishment categories helps show operational differences between high-risk and low-risk food venues. High-risk facilities include Public Middle Schools (40.5% failure rate), Restaurants (36.2%), and Carry Out locations (33.2%). These kitchens have high daily customer volume, complex cooking procedures, and constant handling of raw meats and perishable ingredients, creating a higher chance of sanitation and temperature errors. In contrast, low-risk facilities include Caterers (12.7%) and Snack Bars (11.2%). These venues primarily sell pre-packaged items or prepare food items off-site in controlled batches. They experience minimal critical violations.
+	Inspection visits play a major role in compliance. Routine initial inspections uncover the highest volume of critical violations, with comprehensive visits showing a 33.4% adverse rate and monitoring visits showing a 37.3% adverse rate. Follow-up reinspections show a dramatic 11% drop in violations across single-facility categories. This steep reduction shows that health department citations and the threat of closure help address critical issues.
+Top Violations and Seasonal Weather Patterns
+	After evaluating 16 health code standards, the data show that non-compliance follows a steep Pareto pattern dominated by two primary hazards. Cold holding temperatures (19.9% of all visits, 2,353 citations), Rodents and Insects (15.5% of all visits, 1,840 citations), and Secondary violations for things such as Hot Holding Temperatures (6.6%), Hand Washing (4.1%), and Food Protected from Contamination (3.9%). 
+	Breaking down violations by facility type helps to reveal patterns. Cold holding violations occur most in facilities that store large inventories sensitive to temperature and have heavy daily access, including Nursing Homes (30%), Carry Out Operations (25%), and Restaurants (25%). Pest Violations occur more in fast, wasteful retail environments such as Carry Out (22%), Snack Bars (21%), and Restaurants (18%).
+*
+Seasonal weather shifts also create predictable equipment strain on commercial kitchen equipment. Cold-holding temperature violations rise from 18.5% in winter to 21.8% in summer. High outdoor summer temperatures and humid kitchen environments can overwork refrigeration, causing it to fail. Rodent and insect violations remain steady throughout the year, rising from 14.2% in the winter to 17.5% in the fall. Bugs and rodents come indoors to seek more food and warmth from the cold.
+Predictive Modeling and Evaluation
+For our model, we built a multivariable logistic regression using 11,854 inspections. For our model, we had three primary drivers for outcomes:
+Prior Failed Inspection (Odds Ratio = 2.41): If an establishment failed previous inspections, it has 2.4 times higher odds of failing its next inspection. History indicates future health risk.
+Restaurant Category (Odds Ratio = 1.77): Full-service restaurants face 77% higher odds of failure than baseline grocery markets and retail venues.
+Reinspection Visit (Odds ratio = .30): Follow-up reinspections reduce the odds of failure by 70%, showing that once a business is visited, it is more likely to comply and fix mistakes.
+
+	At a .50 cutoff, the model is about 70% accurate overall, but it misses 82.4% of kitchens with critical violations (over 8 out of 10 violators). In food safety, missing an unsafe kitchen is more dangerous than wasting an hour inspecting clean ones, because unflagged violators can lead to foodborne illness outbreaks.
+Policy Recommendations
+To ensure health standards are met, Montgomery County Health should take three actions to ensure restaurants are safe for consumers. First, lower the classification threshold from .50 to .30. Lowering the threshold prioritizes full-service restaurants and repeat offenders, cutting missed violations in half. This allows inspectors to catch more failures before foodborne illness outbreaks occur. The health department should implement automated scheduling and not rely on a calendar rotation for visits. Automated scheduling for follow-up inspections allows for unannounced visits and helps ensure businesses meet standards. Additionally, the Montgomery County Health Department should perform equipment audits to ensure equipment is running properly and prevent refrigeration breakdowns. Conducting pre-summer refrigeration checks can help prevent foodborne illness.
+
+
+
+
+
+
+
+
+Sources:
+Montgomery County of Maryland. “Food Inspection.” Data.gov, 4 Oct. 2024, catalog.data.gov/dataset/food-inspection. Accessed 17 Nov. 2026. Food Inspection
+
+
+
+
 
